@@ -12,6 +12,9 @@ on top: accounts, friends, chat, matchmaking, in game presence, records and achi
 
 ## Before anything else
 
+> This README is written by **Alissrip**, and the "I" in it is hers. The project itself was not built
+> alone. Everyone who worked on it is credited at the [end of this page](#credits).
+
 I want to clear a few things up first.
 
 This started as a personal project, with the simple goal of improving the rough experience of playing
@@ -41,13 +44,13 @@ without it none of this would exist. I also do not want any kind of relationship
 not want to be associated with their community. I don't want any more of the trouble they caused me,
 and I don't want to keep being defamed.
 
-One more thing, and it should go without saying. **I have nothing to do with Capcom.** This is an
-unofficial fan project, made by one person, with no affiliation with, endorsement by, or connection
-to Capcom or any of its subsidiaries or partners. *Resident Evil*, *Biohazard*, *Outbreak* and every
-related name, character and logo belong to Capcom. I do not own any of it and I do not claim to.
-Nothing here contains or distributes any part of the game: you bring your own disc image and your own
-BIOS, and this launcher only orchestrates the emulator that runs them. No money is made from this,
-and nothing is sold.
+One more thing, and it should go without saying. **We have nothing to do with Capcom.** This is an
+unofficial fan project, made by a handful of people in their own time, with no affiliation with,
+endorsement by, or connection to Capcom or any of its subsidiaries or partners. *Resident Evil*,
+*Biohazard*, *Outbreak* and every related name, character and logo belong to Capcom. We do not own
+any of it and we do not claim to. Nothing here contains or distributes any part of the game: you
+bring your own disc image and your own BIOS, and this launcher only orchestrates the emulator that
+runs them. No money is made from this, and nothing is sold.
 
 This code was originally going to stay private. I'm publishing it because it would be a shame to
 delete it or hide it away, so I'm releasing it as a portfolio piece.
