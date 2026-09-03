@@ -52,6 +52,10 @@ any of it and we do not claim to. Nothing here contains or distributes any part 
 bring your own disc image and your own BIOS, and this launcher only orchestrates the emulator that
 runs them. No money is made from this, and nothing is sold.
 
+That applies to the screenshots too. Any character art you see in them is somebody's profile picture,
+chosen by that user and served by the account system at runtime. Profile pictures have nothing to do
+with the project, they are not part of it, and none of them ship in this repository.
+
 This code was originally going to stay private. I'm publishing it because it would be a shame to
 delete it or hide it away, so I'm releasing it as a portfolio piece.
 
