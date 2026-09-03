@@ -1662,7 +1662,7 @@ offset_top = 5.742578
 offset_right = 634.72504
 offset_bottom = 80.74258
 scale = Vector2(1.5, 1.5)
-scroll_global = 1.2552454933524133
+scroll_global = 1.1
 
 [node name="Borde2" type="TextureRect" parent="CanvasLayer/UI/MainState/MainContainer/MainView/Profile/MainProfile/SuperContainer/ProfileContainer/Resume/UserProfile" unique_id=299781719]
 modulate = Color(1, 1, 1, 0.69411767)
@@ -6093,7 +6093,6 @@ header = NodePath("../../MainView/Header/Buttons")
 [node name="UserMiniProfile" parent="CanvasLayer/UI/MainState/MainContainer/Header/MiniProfile" unique_id=1353761425 instance=ExtResource("31_pxds5")]
 layout_mode = 0
 mouse_filter = 2
-scroll_global = 0.2744586666665301
 
 [node name="Logo" type="TextureRect" parent="CanvasLayer/UI/MainState/MainContainer/Header" unique_id=1113766433 node_paths=PackedStringArray("mainView", "logo")]
 layout_mode = 1
