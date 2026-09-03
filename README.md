@@ -327,3 +327,13 @@ licence does not grant. Email is the way in.
 Two things fall outside this licence. The game server is a separate project with its own repository
 and its own licence. The fonts under `Fuentes/` are third party and carry the SIL Open Font License
 1.1, reproduced in `LICENSES/`.
+
+## Credits
+
+- **Alissrip**: full stack development, interface design (UI/UX), reverse engineering of PCSX2's
+  static RAM, and network and server infrastructure.
+- **Nacho**: reverse engineering of Outbreak's P2P traffic, Godot advisor, doctor of dependency
+  injection, and supreme master of singletoning.
+- **Synmad**: testing, English localisation, and assistance with UI programming.
+- **Brook**: lead tester, assistance with reverse engineering PCSX2's static RAM, and backend
+  hosting.
