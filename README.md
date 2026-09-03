@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/banner.webp" alt="Outbreak Revival" width="640">
+</p>
+
 # Outbreak Revival
 
 A desktop launcher that makes *Resident Evil Outbreak File #1* (PS2, `SLPM-65428`) playable online
@@ -37,6 +41,14 @@ without it none of this would exist. I also do not want any kind of relationship
 not want to be associated with their community. I don't want any more of the trouble they caused me,
 and I don't want to keep being defamed.
 
+One more thing, and it should go without saying. **I have nothing to do with Capcom.** This is an
+unofficial fan project, made by one person, with no affiliation with, endorsement by, or connection
+to Capcom or any of its subsidiaries or partners. *Resident Evil*, *Biohazard*, *Outbreak* and every
+related name, character and logo belong to Capcom. I do not own any of it and I do not claim to.
+Nothing here contains or distributes any part of the game: you bring your own disc image and your own
+BIOS, and this launcher only orchestrates the emulator that runs them. No money is made from this,
+and nothing is sold.
+
 This code was originally going to stay private. I'm publishing it because it would be a shame to
 delete it or hide it away, so I'm releasing it as a portfolio piece.
 
@@ -60,6 +72,10 @@ the game, and it never ships game data:
 Everything else, meaning the account system, the social features and the records, is a custom service
 stack described below.
 
+<p align="center">
+  <img src=".github/launcher-preview.png" alt="The launcher's profile view" width="900">
+</p>
+
 ## Architecture
 
 Four moving parts. Only the first one lives in this repository.
@@ -73,9 +89,8 @@ flowchart TD
     P["<b>PCSX2</b><br/>running your ISO"]
 
     L -->|"1 . POST user/login"| W
-    L -->|"2 . POST /auth/outbreak-hub"| O
-    L -->|"3 . WebSocket /bho"| O
     L -->|launches| P
+    L -->|"2 . POST /auth/outbreak-hub<br/>3 . WebSocket /bho"| O
     P -->|"PS2 protocol :8690"| J
     J -->|"session and match reporting"| O
     O <-->|"shared MariaDB"| J
