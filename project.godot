@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Outbreak Revival"
+run/main_scene="res://Scenes/node_2d.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0.060235776, 5.0507206e-05, 0.20521602, 1)
+boot_splash/show_image=false
+boot_splash/image="uid://cpwquih4atoik"
+config/icon="uid://k33b26f2qps3"
+
+[autoload]
+
+NetworkHandler="*res://Scripts/Network/Network_Handler.gd"
+RpcClient="*uid://b7gnsyl41gn2g"
+RpcModules="*uid://50pq4njmsst0"
+SettingsManager="*uid://c2ga4pfwygxag"
+ShutdownHandler="*uid://dsdikidelivok"
+Log="*uid://hm1cemgcq1mm"
+UpdaterController="*uid://bsrrlnyc2k6ij"
+Pcsx2Manager="*uid://iuqw4keocttf"
+ResolutionController="*uid://dkcncn2n7o2qc"
+OutbreakMeta="*uid://bg6q8pqakhxda"
+AudioController="*uid://cvsjukktd7236"
+DiscordPresence="*res://Scripts/Discord/DiscordPresence.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="viewport"
+
+[global_group]
+
+Button-Type-1=""
+Button-Toggle=""
+Button-Back=""
+Button-Field=""
+Button-Type-2=""
+Button-Type-3=""
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Localization/translations.en.translation")

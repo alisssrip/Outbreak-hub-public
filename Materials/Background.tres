@@ -1,0 +1,36 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b4pp1cq6xn3uu"]
+
+[ext_resource type="Shader" uid="uid://34yihv1aa5uu" path="res://Shaders/status.gdshader" id="1_xg46o"]
+[ext_resource type="Texture2D" uid="uid://da0b0x68x1g36" path="res://Sprites/Status/neblina.png" id="3_ti12b"]
+[ext_resource type="Texture2D" uid="uid://bt40t2q62njva" path="res://Sprites/Status/Lines-status.png" id="4_whcy4"]
+[ext_resource type="Texture2D" uid="uid://c5oekd1xt134b" path="res://Sprites/Status/Status-Red-bar-Mask.png" id="5_6irm3"]
+[ext_resource type="Texture2D" uid="uid://d1y0k5ukuhaf" path="res://Sprites/blackmask(?.png" id="6_xg46o"]
+[ext_resource type="Texture2D" uid="uid://bqufysidlisja" path="res://Sprites/Status/TwoLines.png" id="7_hvxvh"]
+[ext_resource type="Texture2D" uid="uid://dahk7vyb3gyq2" path="res://Sprites/Status/wave mask.png" id="8_km1g3"]
+[ext_resource type="Texture2D" uid="uid://dvbedojh1b72d" path="res://Sprites/Status/LineMask.png" id="9_qwxdw"]
+
+[resource]
+shader = ExtResource("1_xg46o")
+shader_parameter/background_color = Color(0, 0.15342152, 0.2782434, 1)
+shader_parameter/background_texture = ExtResource("6_xg46o")
+shader_parameter/pulse_mask = ExtResource("5_6irm3")
+shader_parameter/lines_mask = ExtResource("4_whcy4")
+shader_parameter/lines_mask_tile_y = 4.98700023362262
+shader_parameter/lines_color = Color(0.066720225, 1.92523e-07, 0.43169883, 1)
+shader_parameter/color_a = Color(0.36705667, 0.00089523196, 0.9553668, 1)
+shader_parameter/visibility_mask_a = ExtResource("8_km1g3")
+shader_parameter/color_b = Color(3.1566863, 0, 9.061582, 1)
+shader_parameter/color_b_multiplier = Color(0.9471993, 0.9471994, 0.9471993, 1)
+shader_parameter/visibility_mask_b = ExtResource("9_qwxdw")
+shader_parameter/two_lines_text = ExtResource("7_hvxvh")
+shader_parameter/two_lines_mask = ExtResource("6_xg46o")
+shader_parameter/two_lines_color = Color(0.70357966, 0.0013127925, 2.0898783, 1)
+shader_parameter/scroll_global = 0.0
+shader_parameter/glow_blur = 4.801
+shader_parameter/glow_strength = 1.523
+shader_parameter/glow_flicker_speed = 3.273
+shader_parameter/glow_flicker_amount = 0.377
+shader_parameter/fog_noise_a = ExtResource("3_ti12b")
+shader_parameter/fog_speed = 0.110000005225
+shader_parameter/fog_scale = 1.2990000617025
+shader_parameter/fog_color = Color(0.05867047, 2.2140146e-06, 0.32851654, 1)

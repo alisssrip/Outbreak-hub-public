@@ -1,0 +1,43 @@
+name: Close pull requests
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = [
+              "Thanks for taking the time to look at this project.",
+              "",
+              "This repository does not accept pull requests. It is published as a portfolio piece",
+              "under the PolyForm Strict License 1.0.0, which does not grant the right to publish",
+              "modified versions, so merging outside contributions is not something the licence allows.",
+              "",
+              "If you want to do something with this code that the licence does not cover, please",
+              "write to alissrip54@gmail.com and tell me what you have in mind and why. I am happy",
+              "to grant permission when the reason convinces me.",
+              "",
+              "This pull request is being closed automatically."
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body
+            });
+
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              state: "closed"
+            });

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cib7cmvvkap7t"]
+
+[ext_resource type="Script" uid="uid://d3bexuwb2bwyl" path="res://Scripts/UI/Friend/UserSearchCard.gd" id="1_dejr7"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="2_4wpk6"]
+[ext_resource type="Texture2D" uid="uid://b33bo8dj0opcg" path="res://Sprites/Default_profile_icon.png" id="3_ajtth"]
+[ext_resource type="Texture2D" uid="uid://baor67kqmfld" path="res://Sprites/border-shiny.png" id="4_vdkcc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh8xd"]
+bg_color = Color(1.940271e-07, 0.0053156624, 0.11178885, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldgpb"]
+bg_color = Color(0.4512, 0.58154655, 0.94, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orybc"]
+bg_color = Color(0, 0, 0, 0.4627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t01sr"]
+bg_color = Color(0.08838887, 0.09592611, 0.21665645, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nn5yo"]
+
+[node name="UserCard" type="Panel" unique_id=1457934212 node_paths=PackedStringArray("name_label", "icon_rect", "click_button")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(328, 62)
+offset_right = 285.0
+offset_bottom = 62.0
+scale = Vector2(0.9988379, 0.9951554)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh8xd")
+script = ExtResource("1_dejr7")
+name_label = NodePath("Container/Name")
+icon_rect = NodePath("Container/Icon")
+click_button = NodePath("Container/Button")
+
+[node name="Container" type="Control" parent="." unique_id=572232757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Container" unique_id=1317178316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.003921569, 0.11372549, 1)
+
+[node name="Button" type="Button" parent="Container" unique_id=453193557 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_right = 328.38162
+offset_bottom = 62.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldgpb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_orybc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t01sr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nn5yo")
+
+[node name="Name" type="Label" parent="Container" unique_id=849925940]
+layout_mode = 0
+offset_left = 74.0861
+offset_top = 17.08276
+offset_right = 306.3862
+offset_bottom = 42.677967
+theme_override_colors/font_color = Color(0.61977637, 0.76001364, 0.85182816, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_4wpk6")
+theme_override_font_sizes/font_size = 20
+text = "AAAAAAAAAAAAAAA"
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Container" unique_id=1584986528]
+modulate = Color(0.49354547, 0.49354553, 0.49354553, 1)
+texture_filter = 4
+layout_mode = 0
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 62.0
+offset_bottom = 53.0
+mouse_filter = 2
+texture = ExtResource("3_ajtth")
+expand_mode = 1
+
+[node name="Borde" type="TextureRect" parent="Container/Icon" unique_id=1439415664]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_vdkcc")
+expand_mode = 1

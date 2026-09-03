@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://1tgkvoe1vu6u"]
+
+[ext_resource type="Script" uid="uid://cvd6vj3tb06kl" path="res://Scripts/UI/Main view modules/MV_PorfileSystems/PrefabBehaviour/MV_Profile_AchievementPrefab.gd" id="1_ikyl4"]
+[ext_resource type="Texture2D" uid="uid://cpictbdmhsksh" path="res://Sprites/RecordsSprites/Levels/no-level-record.png" id="2_1vseh"]
+[ext_resource type="Texture2D" uid="uid://d2s4wgcabo6oa" path="res://Sprites/Achievements/Icons/icon1.png" id="2_lggy3"]
+[ext_resource type="Texture2D" uid="uid://c7r1krqi2a0e" path="res://Sprites/border-bnw.png" id="3_ikyl4"]
+[ext_resource type="Texture2D" uid="uid://63h7d44jt0mf" path="res://Sprites/RecordsSprites/Levels/desicions-desicions-record.png" id="3_ufvhe"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="3_wj2cu"]
+[ext_resource type="Texture2D" uid="uid://q3vd5803nsyb" path="res://Sprites/RecordsSprites/Levels/Hellfire-record.png" id="4_u8a43"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dungd"]
+bg_color = Color(0.012081406, 0.012083169, 0.06669779, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eapvl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6pct"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_tabcv"]
+base_font = ExtResource("3_wj2cu")
+spacing_top = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vseh"]
+bg_color = Color(0.015743215, 0.016952554, 0.028585166, 1)
+
+[node name="Record#1" type="Panel" unique_id=137692481 node_paths=PackedStringArray("icon_rect", "title_label", "desc_rich", "date_label", "percent_label", "hardcore_percent_label", "status_rect")]
+custom_minimum_size = Vector2(0, 50)
+offset_bottom = 30.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dungd")
+script = ExtResource("1_ikyl4")
+icon_rect = NodePath("PanelContainer/HBoxContainer/CharIcon/TextureRect")
+title_label = NodePath("PanelContainer/HBoxContainer/VBoxContainer/Name")
+desc_rich = NodePath("PanelContainer/HBoxContainer/VBoxContainer/Description")
+date_label = NodePath("PanelContainer/HBoxContainer/HBoxContainer/Date")
+percent_label = NodePath("PanelContainer/HBoxContainer/HBoxContainer/Percent")
+hardcore_percent_label = NodePath("PanelContainer/HBoxContainer/HBoxContainer/Percent2")
+status_rect = NodePath("PanelContainer/TextureRect")
+status_locked = ExtResource("2_1vseh")
+status_unlocked = ExtResource("3_ufvhe")
+status_hardcore = ExtResource("4_u8a43")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1834983012]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eapvl")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=407329032]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_u8a43")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1445870285]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="CharIcon" type="Panel" parent="PanelContainer/HBoxContainer" unique_id=1556469201]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/CharIcon" unique_id=1898674587]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lggy3")
+expand_mode = 1
+
+[node name="IconBorder" type="NinePatchRect" parent="PanelContainer/HBoxContainer/CharIcon" unique_id=2019234113]
+modulate = Color(0.40718004, 0.6554471, 1, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("3_ikyl4")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1675704705]
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1562151488]
+custom_minimum_size = Vector2(60, 15)
+custom_maximum_size = Vector2(365, -1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Hellfire - Very Hard"
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=444714883]
+custom_minimum_size = Vector2(60, 30)
+custom_maximum_size = Vector2(365, -1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 9
+text = "Complete \"The Hive\" on Very Hard with 4 Survivors. All Players must survive"
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1850424575]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Percent" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=463867793]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vseh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1vseh")
+text = "NORMAL: 8.99%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconBorder" type="NinePatchRect" parent="PanelContainer/HBoxContainer/HBoxContainer/Percent" unique_id=236936486]
+modulate = Color(0.40718004, 0.6554471, 1, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("3_ikyl4")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Percent2" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=840200792]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vseh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1vseh")
+text = "HARD MODE: 8.99%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconBorder" type="NinePatchRect" parent="PanelContainer/HBoxContainer/HBoxContainer/Percent2" unique_id=1166424836]
+modulate = Color(0.40718004, 0.6554471, 1, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("3_ikyl4")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Date" type="Label" parent="PanelContainer/HBoxContainer/HBoxContainer" unique_id=1496131626]
+custom_minimum_size = Vector2(115, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vseh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1vseh")
+text = "20/02/2003"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconBorder" type="NinePatchRect" parent="PanelContainer/HBoxContainer/HBoxContainer/Date" unique_id=246880979]
+modulate = Color(0.40718004, 0.6554471, 1, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("3_ikyl4")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3

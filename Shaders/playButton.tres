@@ -1,0 +1,86 @@
+[gd_resource type="Shader" format=3 uid="uid://covipm7vcvbwa"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float state : hint_range(0.0, 1.0) = 0.0;
+
+uniform vec4 bg_color_off : source_color = vec4(0.04, 0.04, 0.08, 1.0);
+uniform vec4 bg_color_on  : source_color = vec4(0.06, 0.12, 0.24, 1.0);
+
+uniform sampler2D lines_mask : hint_default_white;
+uniform float lines_tile_y      : hint_range(0.5, 40.0)  = 10.0;
+uniform vec4  lines_color_off   : source_color = vec4(0.20, 0.20, 0.35, 1.0);
+uniform vec4  lines_color_on    : source_color = vec4(0.40, 0.75, 1.00, 1.0);
+uniform float lines_alpha_min   : hint_range(0.0, 1.0)   = 0.20;
+uniform float lines_alpha_max   : hint_range(0.0, 1.0)   = 0.60;
+uniform float lines_dim_off     : hint_range(0.0, 1.0)   = 0.25;
+uniform float lines_flicker_spd : hint_range(0.0, 20.0)  = 4.0;
+
+uniform sampler2D vignette_mask : hint_default_black;
+uniform float vignette_strength : hint_range(0.0, 4.0) = 1.2;
+
+uniform float glow_blur         : hint_range(0.0, 12.0) = 4.0;
+uniform float glow_strength_off : hint_range(0.0, 4.0)  = 0.2;
+uniform float glow_strength_on  : hint_range(0.0, 4.0)  = 2.0;
+uniform float glow_flicker_spd  : hint_range(0.0, 30.0) = 7.0;
+uniform float glow_flicker_amt  : hint_range(0.0, 1.0)  = 0.12;
+
+float flicker(float spd) {
+    float f = sin(TIME * spd) * 0.6 + sin(TIME * spd * 2.3) * 0.4;
+    return f * 0.5 + 0.5;
+}
+
+vec4 scanline_layer(vec2 uv, vec4 color, float alpha_min, float alpha_max, float flick, float s) {
+    float mask        = texture(lines_mask, vec2(0.5, fract(uv.y * lines_tile_y))).r;
+    float alpha_scale = mix(lines_dim_off, 1.0, s);
+    vec4  result      = color;
+    result.a          = mix(alpha_min, alpha_max, flick) * mask * alpha_scale;
+    return result;
+}
+
+void fragment() {
+    float s = state;
+
+    // ── Fondo ───────────────────────────────────────────────
+    vec4 result = mix(bg_color_off, bg_color_on, s);
+
+    // ── Viñeta ──────────────────────────────────────────────
+    float vig   = texture(vignette_mask, UV).r;
+    result.rgb += result.rgb * vig * vignette_strength * s;
+
+    // ── Glow ────────────────────────────────────────────────
+    vec4  lines_color  = mix(lines_color_off, lines_color_on, s);
+    float flick_g      = flicker(glow_flicker_spd);
+    float glow_base    = mix(glow_strength_off, glow_strength_on, s);
+    float glow_current = glow_base + flick_g * glow_flicker_amt * s;
+
+    vec2  px         = TEXTURE_PIXEL_SIZE;
+    vec4  glow_accum = vec4(0.0);
+    float weight_sum = 0.0;
+
+    for (int x = -3; x <= 3; x++) {
+        for (int y = -3; y <= 3; y++) {
+            float w     = exp(-float(x * x + y * y) / 8.0);
+            vec2  off   = vec2(float(x), float(y)) * px * glow_blur;
+            vec2  uv_s  = vec2(0.5, fract((UV.y + off.y) * lines_tile_y));
+            float mask_s = texture(lines_mask, uv_s).r;
+            glow_accum  += lines_color * mask_s * w;
+            weight_sum  += w;
+        }
+    }
+    glow_accum    /= weight_sum;
+    glow_accum    *= glow_current;
+    glow_accum.a   = clamp(glow_accum.a, 0.0, 1.0);
+    result.rgb     = mix(result.rgb, glow_accum.rgb, glow_accum.a * 0.5);
+
+    // ── Scanlines encima de todo ─────────────────────────────
+    float flick_l = flicker(lines_flicker_spd);
+    vec4  lines   = scanline_layer(UV, lines_color,
+                                   lines_alpha_min, lines_alpha_max,
+                                   flick_l, s);
+    result.rgb = mix(result.rgb, lines.rgb, lines.a);
+
+    result.a = 1.0;
+    COLOR = result;
+}"

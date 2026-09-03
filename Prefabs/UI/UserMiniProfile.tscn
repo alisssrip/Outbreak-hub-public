@@ -1,0 +1,463 @@
+[gd_scene format=3 uid="uid://et5dicnhbd5l"]
+
+[ext_resource type="Script" uid="uid://dikrwrrwbh2wb" path="res://Scripts/UI/UserUISystem.gd" id="1_gwn7u"]
+[ext_resource type="Script" uid="uid://ce4lq3t3frvca" path="res://Scripts/UI/Status_Variant.gd" id="3_opj0n"]
+[ext_resource type="Texture2D" uid="uid://c8lgo6yg56tf3" path="res://Sprites/Status/Status-Green-bar-Mask.png" id="4_shuv4"]
+[ext_resource type="Script" uid="uid://cp31x4ud8dv2x" path="res://Scripts/UI/Status_Shader_Config.gd" id="5_x5x00"]
+[ext_resource type="Texture2D" uid="uid://b5a3hmsd2wgue" path="res://Sprites/Status/Status-Yellow-bar-Mask.png" id="6_sdk3w"]
+[ext_resource type="Texture2D" uid="uid://c5oekd1xt134b" path="res://Sprites/Status/Status-Red-bar-Mask.png" id="7_j8yu0"]
+[ext_resource type="Texture2D" uid="uid://gxp4o8jqwua" path="res://Sprites/Status/Status-None-bar-Mask.png" id="8_jmfa3"]
+[ext_resource type="Texture2D" uid="uid://dgkb3uwud7nma" path="res://Sprites/banner.png" id="9_fqope"]
+[ext_resource type="Shader" uid="uid://34yihv1aa5uu" path="res://Shaders/status.gdshader" id="10_bqrk0"]
+[ext_resource type="Texture2D" uid="uid://c5b73b6bgdcyg" path="res://Sprites/Status/Sombra-status.png" id="11_vec6q"]
+[ext_resource type="Texture2D" uid="uid://da0b0x68x1g36" path="res://Sprites/Status/neblina.png" id="12_hflo5"]
+[ext_resource type="Texture2D" uid="uid://bt40t2q62njva" path="res://Sprites/Status/Lines-status.png" id="13_0k6uu"]
+[ext_resource type="Texture2D" uid="uid://4ubqh0buoejr" path="res://Sprites/Status/TwoLinesMask.png" id="14_f3771"]
+[ext_resource type="Texture2D" uid="uid://bqufysidlisja" path="res://Sprites/Status/TwoLines.png" id="15_f22v7"]
+[ext_resource type="Texture2D" uid="uid://dahk7vyb3gyq2" path="res://Sprites/Status/wave mask.png" id="16_se21p"]
+[ext_resource type="Texture2D" uid="uid://dvbedojh1b72d" path="res://Sprites/Status/LineMask.png" id="17_cderj"]
+[ext_resource type="Texture2D" uid="uid://d1y0k5ukuhaf" path="res://Sprites/blackmask(?.png" id="18_e5asf"]
+[ext_resource type="Shader" uid="uid://dcpymba0trqc4" path="res://Shaders/blurText.gdshader" id="19_vdlso"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="20_e03y6"]
+[ext_resource type="Texture2D" uid="uid://c7r1krqi2a0e" path="res://Sprites/border-bnw.png" id="21_nbiqo"]
+[ext_resource type="Texture2D" uid="uid://b33bo8dj0opcg" path="res://Sprites/Default_profile_icon.png" id="22_knb3f"]
+[ext_resource type="Texture2D" uid="uid://baor67kqmfld" path="res://Sprites/border-shiny.png" id="23_0wcwf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh8xd"]
+bg_color = Color(1.940271e-07, 0.0053156624, 0.11178885, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5pg5"]
+shader = ExtResource("10_bqrk0")
+shader_parameter/background_color = Color(0.07, 0.07, 0.07, 0.8901961)
+shader_parameter/background_texture = ExtResource("11_vec6q")
+shader_parameter/pulse_mask = ExtResource("7_j8yu0")
+shader_parameter/lines_mask = ExtResource("13_0k6uu")
+shader_parameter/lines_mask_tile_y = 1.0
+shader_parameter/lines_color = Color(0.52895766, 0.47146243, 0, 0.50980395)
+shader_parameter/color_a = Color(0.10860501, 0.87, 0.09570001, 0.8862745)
+shader_parameter/visibility_mask_a = ExtResource("16_se21p")
+shader_parameter/color_b = Color(0, 7.464185, 0.9309273, 1)
+shader_parameter/color_b_multiplier = Color(0.9471993, 0.9471994, 0.9471993, 1)
+shader_parameter/visibility_mask_b = ExtResource("17_cderj")
+shader_parameter/two_lines_text = ExtResource("15_f22v7")
+shader_parameter/two_lines_mask = ExtResource("14_f3771")
+shader_parameter/two_lines_color = Color(0, 1, 0.083333254, 1)
+shader_parameter/scroll_global = 0.4800000228
+shader_parameter/glow_blur = 4.8010002280475
+shader_parameter/glow_strength = 1.5230000723425
+shader_parameter/glow_flicker_speed = 3.2730001554675
+shader_parameter/glow_flicker_amount = 0.3770000179075
+shader_parameter/fog_noise_a = ExtResource("12_hflo5")
+shader_parameter/fog_speed = 0.09600000456
+shader_parameter/fog_scale = 1.1390000541025
+shader_parameter/fog_color = Color(0.08214102, 2.1382592, 0, 0.24705882)
+
+[sub_resource type="Resource" id="Resource_127yo"]
+script = ExtResource("5_x5x00")
+text_color = Color(0.13333334, 0.654902, 0.19215687, 1)
+border_color = Color(0, 1.120408, 0.18995394, 1)
+pulse_texture = ExtResource("4_shuv4")
+lines_color = Color(0, 0.76862746, 0.24313726, 1)
+pulse_color = Color(0, 0.7411765, 0.23921569, 1)
+arrowhead_color = Color(0, 4.6143794, 3.4426296, 1)
+fog_speed = 0.086
+fog_scale = 1.0
+fog_color = Color(0.30284902, 0.77028203, 7.70092e-07, 1)
+metadata/_custom_type_script = "uid://cp31x4ud8dv2x"
+
+[sub_resource type="Resource" id="Resource_imwoa"]
+script = ExtResource("3_opj0n")
+status_name = "ONLINE"
+status_shader_config = SubResource("Resource_127yo")
+metadata/_custom_type_script = "uid://ce4lq3t3frvca"
+
+[sub_resource type="Resource" id="Resource_xm11t"]
+script = ExtResource("5_x5x00")
+text_color = Color(0.6838471, 0.51757747, 0, 1)
+border_color = Color(1.2318419, 1.0343411, 0, 1)
+pulse_texture = ExtResource("6_sdk3w")
+lines_color = Color(0.68235296, 0.5176471, 0, 1)
+pulse_color = Color(0.68235296, 0.5176471, 0, 1)
+arrowhead_color = Color(2.5476022, 0.6404304, 3.4115365e-06, 1)
+two_lines_color = Color(1.459973, 1.2329459, 0, 1)
+fog_speed = 0.16
+fog_scale = 1.0
+fog_color = Color(0.61952364, 0.53348196, 0.0064048553, 1)
+metadata/_custom_type_script = "uid://cp31x4ud8dv2x"
+
+[sub_resource type="Resource" id="Resource_fi81o"]
+script = ExtResource("3_opj0n")
+status_name = "AFK"
+status_shader_config = SubResource("Resource_xm11t")
+metadata/_custom_type_script = "uid://ce4lq3t3frvca"
+
+[sub_resource type="Resource" id="Resource_6p3v2"]
+script = ExtResource("5_x5x00")
+text_color = Color(0.84589803, 0.110347666, 6.738305e-07, 1)
+border_color = Color(1.2657293, 0, 0.35910898, 1)
+pulse_texture = ExtResource("7_j8yu0")
+lines_color = Color(0.6593788, 0.14229834, 0, 1)
+pulse_color = Color(0.78993237, 0.19970268, 0, 1)
+arrowhead_color = Color(6.206278, 0, 0, 1)
+two_lines_color = Color(6.9750767, 0, 0, 1)
+fog_speed = 0.24
+fog_scale = 1.0
+fog_color = Color(0.292218, 0.27074993, 1, 1)
+metadata/_custom_type_script = "uid://cp31x4ud8dv2x"
+
+[sub_resource type="Resource" id="Resource_e8v6v"]
+script = ExtResource("3_opj0n")
+status_name = "BUSY"
+status_shader_config = SubResource("Resource_6p3v2")
+metadata/_custom_type_script = "uid://ce4lq3t3frvca"
+
+[sub_resource type="Resource" id="Resource_ispqm"]
+script = ExtResource("5_x5x00")
+text_color = Color(0.5503646, 0.17111203, 1, 1)
+border_color = Color(1.0466844, 0.62082344, 1.8984075, 1)
+pulse_texture = ExtResource("7_j8yu0")
+lines_color = Color(0.21234038, 0.103907056, 0.99999994, 1)
+pulse_color = Color(0.4223012, 0.2572434, 1, 1)
+arrowhead_color = Color(3.1566863, 0, 9.061582, 1)
+two_lines_color = Color(0.70357966, 0.0013127925, 2.0898783, 1)
+fog_speed = 0.24
+fog_scale = 1.0
+fog_color = Color(0.292218, 0.27074993, 1, 1)
+metadata/_custom_type_script = "uid://cp31x4ud8dv2x"
+
+[sub_resource type="Resource" id="Resource_ewycy"]
+script = ExtResource("3_opj0n")
+status_name = "IN GAME"
+status_shader_config = SubResource("Resource_ispqm")
+metadata/_custom_type_script = "uid://ce4lq3t3frvca"
+
+[sub_resource type="Resource" id="Resource_3xunu"]
+script = ExtResource("5_x5x00")
+text_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+border_color = Color(1, 1, 1, 1)
+pulse_texture = ExtResource("8_jmfa3")
+lines_color = Color(0.38549298, 0.3854923, 0.3854925, 1)
+pulse_color = Color(1, 1, 1, 1)
+arrowhead_color = Color(8.956535, 8.956536, 8.956536, 1)
+two_lines_color = Color(0.83054817, 0.81708705, 0.7578075, 1)
+glow_blur = 0.0
+glow_strength = 0.0
+glow_flicker_speed = 0.0
+glow_fliker_amount = 0.0
+fog_speed = 0.0
+fog_scale = 0.0
+metadata/_custom_type_script = "uid://cp31x4ud8dv2x"
+
+[sub_resource type="Resource" id="Resource_yaxcw"]
+script = ExtResource("3_opj0n")
+status_name = "OFFLINE"
+status_shader_config = SubResource("Resource_3xunu")
+metadata/_custom_type_script = "uid://ce4lq3t3frvca"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_knb3f"]
+shader = ExtResource("10_bqrk0")
+shader_parameter/background_color = Color(0.07, 0.07, 0.07, 0.8901961)
+shader_parameter/background_texture = ExtResource("11_vec6q")
+shader_parameter/pulse_mask = ExtResource("8_jmfa3")
+shader_parameter/lines_mask = ExtResource("13_0k6uu")
+shader_parameter/lines_mask_tile_y = 1.0
+shader_parameter/lines_color = Color(0.38549298, 0.3854923, 0.3854925, 1)
+shader_parameter/color_a = Color(1, 1, 1, 1)
+shader_parameter/visibility_mask_a = ExtResource("16_se21p")
+shader_parameter/color_b = Color(8.956535, 8.956536, 8.956536, 1)
+shader_parameter/color_b_multiplier = Color(0.9471993, 0.9471994, 0.9471993, 1)
+shader_parameter/visibility_mask_b = ExtResource("17_cderj")
+shader_parameter/two_lines_text = ExtResource("15_f22v7")
+shader_parameter/two_lines_mask = ExtResource("14_f3771")
+shader_parameter/two_lines_color = Color(0.83054817, 0.81708705, 0.7578075, 1)
+shader_parameter/scroll_global = 2.0
+shader_parameter/glow_blur = 0.0
+shader_parameter/glow_strength = 0.0
+shader_parameter/glow_flicker_speed = 0.0
+shader_parameter/glow_flicker_amount = 0.0
+shader_parameter/fog_noise_a = ExtResource("12_hflo5")
+shader_parameter/fog_speed = 0.0
+shader_parameter/fog_scale = 0.0
+shader_parameter/fog_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g8c"]
+shader = ExtResource("19_vdlso")
+shader_parameter/blur_amount = 2.358000112005
+shader_parameter/glow_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+shader_parameter/glow_strength = 0.774000036765
+shader_parameter/glow_flicker_speed = 4.9090002331775
+shader_parameter/glow_flicker_amount = 0.3090000146775
+shader_parameter/glow_flicker_blink_speed = 5.15200024472
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knb3f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5asf"]
+bg_color = Color(0, 0, 0, 0.5058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnaym"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkqiq"]
+
+[node name="UserMiniProfile" type="Panel" unique_id=1457934212 node_paths=PackedStringArray("border", "text_name", "text_name_blur", "text_status", "text_status_blur", "text_status_in_game", "text_status_in_game_blur", "text_infection", "text_infection_blur", "in_game_status_shadow", "infection_shadow", "pulse_tex", "avatar", "button")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(310.76, 75)
+offset_right = 310.76
+offset_bottom = 75.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh8xd")
+script = ExtResource("1_gwn7u")
+active_status = 4
+wait_part1 = 0.8
+wait_part2 = 0.8
+border = NodePath("Container/PorfileBorder")
+pulse_paused = false
+scroll_global = 2.0
+text_name = NodePath("Container/Name")
+text_name_blur = NodePath("Container/Name/Name Blur")
+text_status = NodePath("Container/Status")
+text_status_blur = NodePath("Container/Status/Status Blur")
+text_status_in_game = NodePath("Container/In-Game Status")
+text_status_in_game_blur = NodePath("Container/In-Game Status/In-Game Status Blur")
+text_infection = NodePath("Container/Infection Status")
+text_infection_blur = NodePath("Container/Infection Status/Infection Blur")
+in_game_status_shadow = NodePath("Container/Shadows")
+infection_shadow = NodePath("Container/Shadows/Shadow 2")
+pulse_tex = NodePath("Container/Pulse")
+avatar = NodePath("Container/Icon")
+button = NodePath("Container/Button")
+shader_material = SubResource("ShaderMaterial_y5pg5")
+status_store = Array[ExtResource("3_opj0n")]([SubResource("Resource_imwoa"), SubResource("Resource_fi81o"), SubResource("Resource_e8v6v"), SubResource("Resource_ewycy"), SubResource("Resource_yaxcw")])
+metadata/_edit_vertical_guides_ = [-17.0]
+
+[node name="Container" type="Control" parent="." unique_id=572232757]
+anchors_preset = 0
+offset_right = 311.0
+offset_bottom = 76.0
+
+[node name="Banner" type="TextureRect" parent="Container" unique_id=1734428529]
+visible = false
+modulate = Color(0.6804, 0.74088, 0.81, 1)
+layout_mode = 0
+offset_left = 74.0
+offset_right = 311.0
+offset_bottom = 75.24754
+texture = ExtResource("9_fqope")
+expand_mode = 1
+
+[node name="Pulse" type="TextureRect" parent="Container" unique_id=1256817286]
+modulate = Color(0.05, 0.05, 0.05, 1)
+self_modulate = Color(0.44, 0.44, 0.44, 1)
+material = SubResource("ShaderMaterial_knb3f")
+layout_mode = 0
+offset_left = 72.78998
+offset_top = 0.98999023
+offset_right = 309.78998
+offset_bottom = 75.24741
+texture = ExtResource("18_e5asf")
+expand_mode = 1
+
+[node name="NEGRO" type="TextureRect" parent="Container" unique_id=315658398]
+modulate = Color(0, 0.8690809, 0.53389996, 1)
+layout_mode = 0
+offset_left = 75.00006
+offset_right = 311.00006
+offset_bottom = 75.24754
+texture = ExtResource("11_vec6q")
+expand_mode = 1
+
+[node name="Shadows" type="TextureRect" parent="Container" unique_id=250714226]
+modulate = Color(18.892157, 14.716599, 10.8104315, 0.83137256)
+layout_mode = 0
+offset_left = 73.0
+offset_right = 309.0
+offset_bottom = 47.0
+texture = ExtResource("8_jmfa3")
+expand_mode = 1
+
+[node name="Shadow 2" type="TextureRect" parent="Container/Shadows" unique_id=1983747095]
+modulate = Color(18.892157, 14.716599, 10.8104315, 0.4745098)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 75.0
+offset_right = 237.0
+offset_bottom = 102.0
+scale = Vector2(1, -1)
+texture = ExtResource("8_jmfa3")
+expand_mode = 1
+
+[node name="Shadow-Infection" type="TextureRect" parent="Container" unique_id=275941923]
+modulate = Color(18.892157, 14.716599, 10.8104315, 0.7529412)
+layout_mode = 0
+offset_left = 74.0
+offset_top = 75.0
+offset_right = 310.0
+offset_bottom = 108.0
+scale = Vector2(1, -1)
+texture = ExtResource("8_jmfa3")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="Container" unique_id=849925940]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 8.74
+offset_right = 198.0
+offset_bottom = 26.740004
+theme_override_colors/font_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 13
+text = "AAAAAAAAAAAAAAA"
+vertical_alignment = 1
+
+[node name="Name Blur" type="Label" parent="Container/Name" unique_id=594130426]
+material = SubResource("ShaderMaterial_b7g8c")
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 17.999992
+theme_override_colors/font_color = Color(0.017199984, 0.86, 0.86, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 13
+text = "AAAAAAAAAAAAAAA"
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="Container" unique_id=1532263438]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 53.585
+offset_right = 145.0
+offset_bottom = 71.584946
+theme_override_colors/font_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 13
+text = "OFFLINE"
+vertical_alignment = 1
+
+[node name="Status Blur" type="Label" parent="Container/Status" unique_id=1452576352]
+material = SubResource("ShaderMaterial_b7g8c")
+layout_mode = 0
+offset_top = -0.9150009
+offset_right = 55.0
+offset_bottom = 17.085014
+theme_override_colors/font_color = Color(0.017199984, 0.86, 0.86, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 13
+text = "OFFLINE"
+vertical_alignment = 1
+
+[node name="In-Game Status" type="Label" parent="Container" unique_id=1242776510]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 54.02
+offset_right = 302.0
+offset_bottom = 73.10501
+theme_override_colors/font_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 9
+text = "LOBBY - AREA 1 - ROOM 1"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="In-Game Status Blur" type="Label" parent="Container/In-Game Status" unique_id=452924515]
+material = SubResource("ShaderMaterial_b7g8c")
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 19.085
+theme_override_colors/font_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 9
+text = "LOBBY - AREA 1 - ROOM 1"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PorfileBorder" type="NinePatchRect" parent="Container" unique_id=1045084612]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.82507
+offset_top = -38.12387
+offset_right = 155.17493
+offset_bottom = 38.113754
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("21_nbiqo")
+patch_margin_left = 1
+patch_margin_top = 3
+patch_margin_right = 1
+patch_margin_bottom = 3
+
+[node name="Infection Status" type="Label" parent="Container" unique_id=1573519549]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 8.925
+offset_right = 304.0
+offset_bottom = 22.925
+theme_override_colors/font_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 12
+text = "INF -100.00%"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Infection Blur" type="Label" parent="Container/Infection Status" unique_id=350671549]
+material = SubResource("ShaderMaterial_b7g8c")
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.7038078, 0.7038079, 0.70380765, 1)
+theme_override_fonts/font = ExtResource("20_e03y6")
+theme_override_font_sizes/font_size = 12
+text = "INF -100.00%"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Container" unique_id=1584986528]
+layout_mode = 0
+offset_left = 1.7949829
+offset_top = 1.9800892
+offset_right = 74.79498
+offset_bottom = 74.98009
+texture = ExtResource("22_knb3f")
+expand_mode = 1
+
+[node name="IconBorder" type="NinePatchRect" parent="Container" unique_id=1462914178]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.8251
+offset_top = -38.123875
+offset_right = -80.8251
+offset_bottom = 38.113754
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+texture = ExtResource("23_0wcwf")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Container" unique_id=335547489]
+position = Vector2(-956.205, -8.911)
+scale = Vector2(1, 0.990099)
+
+[node name="Button" type="Button" parent="Container" unique_id=1771807417 groups=["Button-Type-3"]]
+layout_mode = 0
+offset_right = 311.0
+offset_bottom = 76.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_knb3f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e5asf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pnaym")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wkqiq")

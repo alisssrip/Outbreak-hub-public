@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bfmb28d32yb51"]
+
+[ext_resource type="Script" uid="uid://cjxlho7303erp" path="res://Scripts/UI/UserChatMessageSystem.gd" id="1_016pt"]
+[ext_resource type="Texture2D" uid="uid://bwofq5axlef7g" path="res://Sprites/0a48d51acdd814be2fd6e827b5d6bbb2.jpg" id="2_d743q"]
+[ext_resource type="Texture2D" uid="uid://baor67kqmfld" path="res://Sprites/border-shiny.png" id="3_t4amh"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="4_fire8"]
+
+[node name="Chat" type="HBoxContainer" unique_id=213287532 node_paths=PackedStringArray("name_field", "date_field", "msg_field", "image_icon")]
+alignment = 1
+script = ExtResource("1_016pt")
+name_field = NodePath("Text/HBoxContainer/Label")
+date_field = NodePath("Text/HBoxContainer/Date")
+msg_field = NodePath("Text/Message")
+image_icon = NodePath("Icon/Image")
+
+[node name="Icon" type="HBoxContainer" parent="." unique_id=1722466128]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Image" type="TextureRect" parent="Icon" unique_id=582242307]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_d743q")
+expand_mode = 1
+
+[node name="Borde" type="TextureRect" parent="Icon/Image" unique_id=1257303298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t4amh")
+expand_mode = 1
+
+[node name="Text" type="VBoxContainer" parent="." unique_id=1755509493]
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Text" unique_id=382746485]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Text" unique_id=1490089921]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Text/HBoxContainer" unique_id=720389709]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("4_fire8")
+theme_override_font_sizes/font_size = 14
+text = "Alissrip"
+vertical_alignment = 1
+
+[node name="Date" type="Label" parent="Text/HBoxContainer" unique_id=2108735378]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.26904544, 0.35362998, 0.40844524, 1)
+theme_override_fonts/font = ExtResource("4_fire8")
+theme_override_font_sizes/font_size = 11
+text = "99:99 99/99/99999"
+vertical_alignment = 2
+
+[node name="Message" type="RichTextLabel" parent="Text" unique_id=1801013680]
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Sample chat message"
+fit_content = true
+selection_enabled = true

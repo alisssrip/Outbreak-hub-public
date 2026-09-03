@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dkmk1kaf6q78e"]
+
+[ext_resource type="Script" uid="uid://cyq8gcy0mn836" path="res://Scripts/NewsController/ArticleSystem.gd" id="1_6qloa"]
+[ext_resource type="Texture2D" uid="uid://cwqlfra3erwth" path="res://Sprites/Makii.net.webp" id="1_lj6ib"]
+[ext_resource type="Texture2D" uid="uid://c7r1krqi2a0e" path="res://Sprites/border-bnw.png" id="2_6qloa"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="3_wyf6u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qloa"]
+content_margin_top = 30.0
+content_margin_bottom = 30.0
+bg_color = Color(0.0046556056, 0.004654447, 0.015402194, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o42sb"]
+
+[node name="News#1" type="PanelContainer" unique_id=1463227731 node_paths=PackedStringArray("article_image", "article_title", "article_description")]
+custom_minimum_size = Vector2(600, 0)
+offset_right = 600.0
+offset_bottom = 774.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qloa")
+script = ExtResource("1_6qloa")
+article_image = NodePath("Container/NewImage")
+article_title = NodePath("Container/VBoxContainer/Title")
+article_description = NodePath("Container/VBoxContainer/Text")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=604825292]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+
+[node name="NewImage" type="TextureRect" parent="Container" unique_id=1866197101]
+custom_minimum_size = Vector2(512, 120)
+layout_mode = 2
+texture = ExtResource("1_lj6ib")
+expand_mode = 1
+
+[node name="Border" type="NinePatchRect" parent="Container/NewImage" unique_id=606062002]
+modulate = Color(0.2766926, 0.32613248, 0.7635153, 1)
+layout_mode = 0
+offset_left = -6.0
+offset_top = -4.950485
+offset_right = 512.0
+offset_bottom = 120.0
+texture = ExtResource("2_6qloa")
+region_rect = Rect2(1, 0, 253, 256)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=1388140305]
+custom_minimum_size = Vector2(490, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Container/VBoxContainer" unique_id=1713534462]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76862746, 0.84313726, 0.92941177, 1)
+theme_override_fonts/font = ExtResource("3_wyf6u")
+theme_override_font_sizes/font_size = 22
+text = "Entre otras nuevas noticias."
+autowrap_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Container/VBoxContainer" unique_id=262881695]
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(0.8646751, 0.86467516, 0.8646751, 1)
+theme_override_font_sizes/normal_font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o42sb")
+text = "Sample article body. Replaced at runtime by the article fetched from the backend."
+fit_content = true
+selection_enabled = true

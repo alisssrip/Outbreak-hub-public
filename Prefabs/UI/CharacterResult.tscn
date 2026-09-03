@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://bljffbwfa487r"]
+
+[ext_resource type="Script" uid="uid://c06gcapbck8qr" path="res://Scripts/UI/Main view modules/MV_GameBreakdown_PlayerRow.gd" id="1_ckppd"]
+[ext_resource type="Texture2D" uid="uid://trjlkff1nmx2" path="res://Sprites/StatusCharacters/Transparent_Character.png" id="2_vroup"]
+[ext_resource type="Texture2D" uid="uid://bd28cvatjy3q6" path="res://Sprites/RecordsSprites/CharacterColorBackground/Yoko-Background.png" id="3_1amlb"]
+[ext_resource type="Theme" uid="uid://b0g2g6mdgyvb6" path="res://Tres/Main_Theme.tres" id="4_c0g0e"]
+[ext_resource type="Texture2D" uid="uid://dp438th0lli36" path="res://Sprites/RecordsSprites/RecordCharIcon/Yoko.png" id="4_vroup"]
+[ext_resource type="Script" uid="uid://bornar3egpvkd" path="res://Scripts/UI/Game Results/GameResultsSingleField.gd" id="5_0gbvs"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="5_c0g0e"]
+[ext_resource type="Texture2D" uid="uid://dlvefhaoj4g7m" path="res://Sprites/RecordsSprites/LineSeparator.png" id="6_0gbvs"]
+[ext_resource type="Texture2D" uid="uid://c7r1krqi2a0e" path="res://Sprites/border-bnw.png" id="6_3qq55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dungd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eapvl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_tabcv"]
+base_font = ExtResource("5_c0g0e")
+spacing_top = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sh3x"]
+bg_color = Color(0.025799982, 0.011999998, 0.15, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6pct"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Character" type="Panel" unique_id=137692481 node_paths=PackedStringArray("nickname_label", "character_label", "infection_label", "hits_label", "shots_label", "progress_label", "points_label", "status_label", "character_icon")]
+custom_minimum_size = Vector2(0, 82)
+offset_right = 808.0
+offset_bottom = 81.67502
+theme_override_styles/panel = SubResource("StyleBoxFlat_dungd")
+script = ExtResource("1_ckppd")
+empty_icon = ExtResource("2_vroup")
+nickname_label = NodePath("PlayerName")
+character_label = NodePath("INFECTION/CharIcon/CharacterName")
+infection_label = NodePath("INFECTION/HBoxContainer/Infection")
+hits_label = NodePath("INFECTION/HBoxContainer/Time")
+shots_label = NodePath("INFECTION/HBoxContainer/Shoots")
+progress_label = NodePath("INFECTION/HBoxContainer/Progress")
+points_label = NodePath("INFECTION/HBoxContainer/Points")
+status_label = NodePath("INFECTION/HBoxContainer/Difficult")
+character_icon = NodePath("INFECTION/CharIcon/TextureRect")
+
+[node name="Panel" type="Panel" parent="." unique_id=1491686866]
+layout_mode = 0
+offset_right = 808.0
+offset_bottom = 35.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eapvl")
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=725813688]
+modulate = Color(0.47843137, 0.43529412, 1, 1)
+layout_mode = 0
+offset_top = -2.0
+offset_right = 808.0
+offset_bottom = 38.0
+texture = ExtResource("6_3qq55")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="PlayerName" type="Label" parent="." unique_id=413625365]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 14.0
+offset_top = -5.0
+offset_right = 126.875
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 16
+text = "Player666"
+vertical_alignment = 1
+uppercase = true
+
+[node name="INFECTION" type="PanelContainer" parent="." unique_id=1596132784]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_top = 35.0
+offset_right = 808.0
+offset_bottom = 82.0
+theme = ExtResource("4_c0g0e")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3sh3x")
+script = ExtResource("5_0gbvs")
+
+[node name="CharIcon" type="Panel" parent="INFECTION" unique_id=1556469201]
+custom_minimum_size = Vector2(139.375, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="TextureRect" type="TextureRect" parent="INFECTION/CharIcon" unique_id=1898674587]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -325.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1amlb")
+expand_mode = 1
+
+[node name="CharacterName" type="Label" parent="INFECTION/CharIcon" unique_id=1931431289]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 47.0
+offset_top = -3.0219555e-05
+offset_right = 134.0
+offset_bottom = 50.495026
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 20
+text = "Alyssa"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="INFECTION" unique_id=1876003055]
+modulate = Color(0.47843137, 0.43529412, 1, 1)
+layout_mode = 2
+texture = ExtResource("6_3qq55")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="INFECTION" unique_id=1445870285]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="CharIcon" type="Panel" parent="INFECTION/HBoxContainer" unique_id=151106609]
+modulate = Color(0.85490197, 0.85490197, 0.85490197, 0)
+custom_minimum_size = Vector2(123.37, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="TextureRect" type="TextureRect" parent="INFECTION/HBoxContainer/CharIcon" unique_id=1273818982]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_top = -3.0215424e-05
+offset_right = 118.0
+offset_bottom = 49.99997
+texture = ExtResource("4_vroup")
+expand_mode = 1
+
+[node name="CharName2" type="Label" parent="INFECTION/HBoxContainer/CharIcon" unique_id=774125973]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 100.0
+offset_top = -3.0219555e-05
+offset_right = 143.0
+offset_bottom = 50.495026
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Alyssa"
+vertical_alignment = 1
+
+[node name="Line#2" type="TextureRect" parent="INFECTION/HBoxContainer" unique_id=1136585883]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_0gbvs")
+expand_mode = 1
+
+[node name="Infection" type="Label" parent="INFECTION/HBoxContainer" unique_id=570933658]
+custom_minimum_size = Vector2(107, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Infection: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#1" type="TextureRect" parent="INFECTION/HBoxContainer" unique_id=608114699]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_0gbvs")
+expand_mode = 1
+
+[node name="Time" type="Label" parent="INFECTION/HBoxContainer" unique_id=1562151488]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Hits: 999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#5" type="TextureRect" parent="INFECTION/HBoxContainer" unique_id=117796517]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_0gbvs")
+expand_mode = 1
+
+[node name="Shoots" type="Label" parent="INFECTION/HBoxContainer" unique_id=191968231]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Shoots: 999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#6" type="TextureRect" parent="INFECTION/HBoxContainer" unique_id=1659809089]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_0gbvs")
+expand_mode = 1
+
+[node name="Progress" type="Label" parent="INFECTION/HBoxContainer" unique_id=800673796]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Progress: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#7" type="TextureRect" parent="INFECTION/HBoxContainer" unique_id=1873097458]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_0gbvs")
+expand_mode = 1
+
+[node name="Points" type="Label" parent="INFECTION/HBoxContainer" unique_id=1860259604]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Points: 999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#4" type="TextureRect" parent="INFECTION/HBoxContainer" unique_id=1623283506]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_0gbvs")
+expand_mode = 1
+
+[node name="Difficult" type="Label" parent="INFECTION/HBoxContainer" unique_id=783892628]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Abandoned"
+horizontal_alignment = 1
+vertical_alignment = 1

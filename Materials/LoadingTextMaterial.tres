@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ciol5wv23pq7n"]
+
+[ext_resource type="Shader" uid="uid://dcpymba0trqc4" path="res://Shaders/blurText.gdshader" id="1_1vat1"]
+
+[resource]
+shader = ExtResource("1_1vat1")
+shader_parameter/blur_amount = 2.358000112005
+shader_parameter/glow_color = Color(0.3647059, 0.6156863, 0.8509804, 1)
+shader_parameter/glow_strength = 0.774000036765
+shader_parameter/glow_flicker_speed = 4.9090002331775
+shader_parameter/glow_flicker_amount = 0.3090000146775
+shader_parameter/glow_flicker_blink_speed = 5.15200024472

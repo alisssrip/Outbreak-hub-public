@@ -1,0 +1,1320 @@
+[gd_scene format=3 uid="uid://dbtw5y4ee30an"]
+
+[ext_resource type="Texture2D" uid="uid://bosv3jy3l7t0s" path="res://Sprites/RecordsSprites/Levels/below-freezing-point-record.png" id="1_68um0"]
+[ext_resource type="Script" uid="uid://bgjvtdceshfhg" path="res://Scripts/UI/Main view modules/MV_PorfileSystems/PrefabBehaviour/MV_Profile_RecordsCharacter.gd" id="1_wj2cu"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="4_5kfhu"]
+[ext_resource type="Script" uid="uid://cjbatsau1v3gy" path="res://Scripts/UI/Main view modules/MV_PorfileSystems/PrefabBehaviour/MV_Profile_RecordLevel.gd" id="4_lggy3"]
+[ext_resource type="Texture2D" uid="uid://dlvefhaoj4g7m" path="res://Sprites/RecordsSprites/LineSeparator.png" id="5_l762r"]
+[ext_resource type="Texture2D" uid="uid://cad28mcy0igck" path="res://Sprites/RecordsSprites/Levels/outbreak-record.png" id="6_65n2f"]
+[ext_resource type="Texture2D" uid="uid://cn4734h2voi4j" path="res://Sprites/RecordsSprites/simpleborde.png" id="6_wj2cu"]
+[ext_resource type="Texture2D" uid="uid://dsigjrprk8tf1" path="res://Sprites/RecordsSprites/Levels/the-hive-record.png" id="8_0bsey"]
+[ext_resource type="Texture2D" uid="uid://q3vd5803nsyb" path="res://Sprites/RecordsSprites/Levels/Hellfire-record.png" id="9_cvtf5"]
+[ext_resource type="Texture2D" uid="uid://63h7d44jt0mf" path="res://Sprites/RecordsSprites/Levels/desicions-desicions-record.png" id="10_nn5yo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dungd"]
+bg_color = Color(0.012081406, 0.012083169, 0.06669779, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lggy3"]
+bg_color = Color(0.003921569, 0.003921569, 0.023529412, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j05kf"]
+
+[sub_resource type="FontVariation" id="FontVariation_tabcv"]
+base_font = ExtResource("4_5kfhu")
+spacing_top = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wj2cu"]
+texture = ExtResource("6_65n2f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj2cu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65n2f"]
+texture = ExtResource("6_65n2f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6pct"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_lggy3"]
+base_font = ExtResource("4_5kfhu")
+spacing_top = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cvtf5"]
+texture = ExtResource("1_68um0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_namyc"]
+texture = ExtResource("1_68um0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyfli"]
+texture = ExtResource("8_0bsey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vehvl"]
+texture = ExtResource("8_0bsey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6efa"]
+texture = ExtResource("9_cvtf5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn5yo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghsj8"]
+texture = ExtResource("9_cvtf5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljbie"]
+texture = ExtResource("10_nn5yo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ed0a6"]
+texture = ExtResource("10_nn5yo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyfli"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6efa"]
+bg_color = Color(0.011764706, 0.011764706, 0.06666667, 0.6313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpj0q"]
+bg_color = Color(0.011764706, 0.011764706, 0.06666667, 0.31764707)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljbie"]
+bg_color = Color(0, 0, 0, 0.6313726)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qloa"]
+
+[node name="RECORD" type="Panel" unique_id=137692481 node_paths=PackedStringArray("name_background", "name_label", "time_label", "infection_label", "difficulty_label", "rank_label", "show_button", "levels")]
+clip_children = 2
+custom_minimum_size = Vector2(800, 77)
+offset_right = 800.0
+offset_bottom = 388.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dungd")
+script = ExtResource("1_wj2cu")
+collapsed_height = 77.0
+anim_time = 1.0
+name_background = NodePath("Main Container/Name Header/BG")
+name_label = NodePath("Main Container/Name Header/name")
+time_label = NodePath("Main Container/Avg stats container/Time")
+infection_label = NodePath("Main Container/Avg stats container/Infection")
+difficulty_label = NodePath("Main Container/Avg stats container/Difficult")
+rank_label = NodePath("Main Container/Avg stats container/Rank")
+show_button = NodePath("Button7")
+levels = [NodePath("Main Container/Outbreak"), NodePath("Main Container/Below Freezing Point"), NodePath("Main Container/The Hive"), NodePath("Main Container/Hellfire"), NodePath("Main Container/Decisions, Decisions")]
+metadata/_edit_horizontal_guides_ = [103.0]
+
+[node name="Main Container" type="VBoxContainer" parent="." unique_id=336280381]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 374.0
+mouse_filter = 2
+
+[node name="Name Header" type="Panel" parent="Main Container" unique_id=2143702472]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lggy3")
+
+[node name="BG" type="Panel" parent="Main Container/Name Header" unique_id=529368089]
+layout_mode = 0
+offset_right = 558.0
+offset_bottom = 29.495026
+theme_override_styles/panel = SubResource("StyleBoxTexture_j05kf")
+
+[node name="name" type="Label" parent="Main Container/Name Header" unique_id=1744598363]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 0.35642114
+offset_right = 137.0
+offset_bottom = 30.188116
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("4_5kfhu")
+theme_override_font_sizes/font_size = 14
+text = "Alyssa"
+vertical_alignment = 1
+
+[node name="Avg stats container" type="HBoxContainer" parent="Main Container" unique_id=1445870285]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Time" type="Label" parent="Main Container/Avg stats container" unique_id=1562151488]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Total Time: 999.9M"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#1" type="TextureRect" parent="Main Container/Avg stats container" unique_id=1136585883]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Infection" type="Label" parent="Main Container/Avg stats container" unique_id=570933658]
+custom_minimum_size = Vector2(107, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "AVG Infecton 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#2" type="TextureRect" parent="Main Container/Avg stats container" unique_id=1623283506]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Difficult" type="Label" parent="Main Container/Avg stats container" unique_id=783892628]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Very Hard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line#3" type="TextureRect" parent="Main Container/Avg stats container" unique_id=1517650499]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Rank" type="Label" parent="Main Container/Avg stats container" unique_id=950296826]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 13
+text = "Rank: S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Outbreak" type="VBoxContainer" parent="Main Container" unique_id=514608783 node_paths=PackedStringArray("background", "difficulty_label", "time_label", "infection_label", "points_label", "date_label", "rank_label", "click_button")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 1
+script = ExtResource("4_lggy3")
+background = NodePath("HBoxContainer/Background/Background/Panel")
+enabled_style = SubResource("StyleBoxTexture_wj2cu")
+disabled_style = SubResource("StyleBoxTexture_wj2cu")
+difficulty_label = NodePath("HBoxContainer/Level_name and Difficulty/Difficulty Container/Difficult")
+time_label = NodePath("HBoxContainer/Main Stats container/Time")
+infection_label = NodePath("HBoxContainer/Main Stats container/Infection")
+points_label = NodePath("HBoxContainer/Main Stats container/Points")
+date_label = NodePath("HBoxContainer/Main Stats container/Date")
+rank_label = NodePath("HBoxContainer/Main Stats container/Rank")
+click_button = NodePath("../../Button2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Container/Outbreak" unique_id=1133681681]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Background" type="Panel" parent="Main Container/Outbreak/HBoxContainer" unique_id=1278737808]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="Main Container/Outbreak/HBoxContainer/Background" unique_id=1702320040]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wj2cu")
+
+[node name="Panel" type="Panel" parent="Main Container/Outbreak/HBoxContainer/Background/Background" unique_id=790779970]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 55.428024
+offset_right = 719.5394
+offset_bottom = 110.85605
+scale = Vector2(-1, -1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_65n2f")
+
+[node name="Mysterious Line" type="TextureRect" parent="Main Container/Outbreak/HBoxContainer/Background" unique_id=1056741188]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 0
+offset_left = 198.0
+offset_right = 200.0
+offset_bottom = 56.0
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Blank space" type="Panel" parent="Main Container/Outbreak/HBoxContainer" unique_id=688789046]
+custom_minimum_size = Vector2(8.575, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="Level_name and Difficulty" type="VBoxContainer" parent="Main Container/Outbreak/HBoxContainer" unique_id=1871393182]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Level Name" type="Label" parent="Main Container/Outbreak/HBoxContainer/Level_name and Difficulty" unique_id=1684748963]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 15
+text = "OUTBREAK"
+uppercase = true
+
+[node name="Difficulty Container" type="HBoxContainer" parent="Main Container/Outbreak/HBoxContainer/Level_name and Difficulty" unique_id=1440243412]
+layout_mode = 2
+
+[node name="Blank space" type="ColorRect" parent="Main Container/Outbreak/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1036628895]
+custom_minimum_size = Vector2(3.46, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Difficult" type="Label" parent="Main Container/Outbreak/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1944393477]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 10
+text = "Very Hard"
+
+[node name="Main Stats container" type="HBoxContainer" parent="Main Container/Outbreak/HBoxContainer" unique_id=1840586853]
+custom_minimum_size = Vector2(344.325, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Time" type="Label" parent="Main Container/Outbreak/HBoxContainer/Main Stats container" unique_id=1126462892]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Time: 999:99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Outbreak/HBoxContainer/Main Stats container/Time" unique_id=431120416]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Infection" type="Label" parent="Main Container/Outbreak/HBoxContainer/Main Stats container" unique_id=1370176035]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 12
+text = "Infection: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Outbreak/HBoxContainer/Main Stats container/Infection" unique_id=2126814988]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Points" type="Label" parent="Main Container/Outbreak/HBoxContainer/Main Stats container" unique_id=1321395598]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Points: 99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Outbreak/HBoxContainer/Main Stats container/Points" unique_id=265730553]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Date" type="Label" parent="Main Container/Outbreak/HBoxContainer/Main Stats container" unique_id=421458357]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "99/99/9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Outbreak/HBoxContainer/Main Stats container/Date" unique_id=101566448]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Rank" type="Label" parent="Main Container/Outbreak/HBoxContainer/Main Stats container" unique_id=399230120]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "RANK S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Outbreak/HBoxContainer/Main Stats container/Rank" unique_id=991144621]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Below Freezing Point" type="VBoxContainer" parent="Main Container" unique_id=1805444078 node_paths=PackedStringArray("background", "difficulty_label", "time_label", "infection_label", "points_label", "date_label", "rank_label", "click_button")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 1
+script = ExtResource("4_lggy3")
+scenario_id = 1
+background = NodePath("HBoxContainer/Background/Background/Panel")
+enabled_style = SubResource("StyleBoxTexture_cvtf5")
+disabled_style = SubResource("StyleBoxTexture_cvtf5")
+difficulty_label = NodePath("HBoxContainer/Level_name and Difficulty/Difficulty Container/Difficult")
+time_label = NodePath("HBoxContainer/Main Stats container/Time")
+infection_label = NodePath("HBoxContainer/Main Stats container/Infection")
+points_label = NodePath("HBoxContainer/Main Stats container/Points")
+date_label = NodePath("HBoxContainer/Main Stats container/Date")
+rank_label = NodePath("HBoxContainer/Main Stats container/Rank")
+click_button = NodePath("../../Button3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Container/Below Freezing Point" unique_id=1197642719]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Background" type="Panel" parent="Main Container/Below Freezing Point/HBoxContainer" unique_id=497687261]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="Main Container/Below Freezing Point/HBoxContainer/Background" unique_id=1282311627]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wj2cu")
+
+[node name="Panel" type="Panel" parent="Main Container/Below Freezing Point/HBoxContainer/Background/Background" unique_id=427030163]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 55.428024
+offset_right = 719.5394
+offset_bottom = 110.85605
+scale = Vector2(-1, -1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_namyc")
+
+[node name="Blank space" type="Panel" parent="Main Container/Below Freezing Point/HBoxContainer" unique_id=466245998]
+custom_minimum_size = Vector2(8.575, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="Level_name and Difficulty" type="VBoxContainer" parent="Main Container/Below Freezing Point/HBoxContainer" unique_id=985342664]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Level Name" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Level_name and Difficulty" unique_id=407464058]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 15
+text = "Below Freezing Point"
+uppercase = true
+
+[node name="Difficulty Container" type="HBoxContainer" parent="Main Container/Below Freezing Point/HBoxContainer/Level_name and Difficulty" unique_id=165945761]
+layout_mode = 2
+
+[node name="Blank space" type="ColorRect" parent="Main Container/Below Freezing Point/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=495942120]
+custom_minimum_size = Vector2(3.46, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Difficult" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1888055439]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 10
+text = "Very Hard"
+
+[node name="Main Stats container" type="HBoxContainer" parent="Main Container/Below Freezing Point/HBoxContainer" unique_id=913363533]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Time" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container" unique_id=855411633]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Time: 999:99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container/Time" unique_id=1313218454]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Mysterious Line" type="TextureRect" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container/Time" unique_id=1622266984]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 0
+offset_right = 2.0
+offset_bottom = 56.0
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Infection" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container" unique_id=794217884]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 12
+text = "Infection: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container/Infection" unique_id=264174665]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Points" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container" unique_id=1393588690]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Points: 99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container/Points" unique_id=1254657039]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Date" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container" unique_id=2030308608]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "99/99/9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container/Date" unique_id=1072700914]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Rank" type="Label" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container" unique_id=1309631670]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "RANK S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Below Freezing Point/HBoxContainer/Main Stats container/Rank" unique_id=870959435]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="The Hive" type="VBoxContainer" parent="Main Container" unique_id=70940191 node_paths=PackedStringArray("background", "difficulty_label", "time_label", "infection_label", "points_label", "date_label", "rank_label", "click_button")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 1
+script = ExtResource("4_lggy3")
+scenario_id = 2
+background = NodePath("HBoxContainer/Background/Background/Panel")
+enabled_style = SubResource("StyleBoxTexture_fyfli")
+disabled_style = SubResource("StyleBoxTexture_fyfli")
+difficulty_label = NodePath("HBoxContainer/Level_name and Difficulty/Difficulty Container/Difficult")
+time_label = NodePath("HBoxContainer/Main Stats container/Time")
+infection_label = NodePath("HBoxContainer/Main Stats container/Infection")
+points_label = NodePath("HBoxContainer/Main Stats container/Points")
+date_label = NodePath("HBoxContainer/Main Stats container/Date")
+rank_label = NodePath("HBoxContainer/Main Stats container/Rank")
+click_button = NodePath("../../Button4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Container/The Hive" unique_id=1145286781]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Background" type="Panel" parent="Main Container/The Hive/HBoxContainer" unique_id=723905354]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="Main Container/The Hive/HBoxContainer/Background" unique_id=927828748]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wj2cu")
+
+[node name="Panel" type="Panel" parent="Main Container/The Hive/HBoxContainer/Background/Background" unique_id=903500565]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 55.428024
+offset_right = 719.5394
+offset_bottom = 110.85605
+scale = Vector2(-1, -1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_vehvl")
+
+[node name="Blank space" type="Panel" parent="Main Container/The Hive/HBoxContainer" unique_id=697767554]
+custom_minimum_size = Vector2(8.575, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="Level_name and Difficulty" type="VBoxContainer" parent="Main Container/The Hive/HBoxContainer" unique_id=632016056]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Level Name" type="Label" parent="Main Container/The Hive/HBoxContainer/Level_name and Difficulty" unique_id=1029836835]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 15
+text = "The Hive"
+uppercase = true
+
+[node name="Difficulty Container" type="HBoxContainer" parent="Main Container/The Hive/HBoxContainer/Level_name and Difficulty" unique_id=1439167529]
+layout_mode = 2
+
+[node name="Blank space" type="ColorRect" parent="Main Container/The Hive/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=2036634139]
+custom_minimum_size = Vector2(3.46, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Difficult" type="Label" parent="Main Container/The Hive/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1111862121]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 10
+text = "Very Hard"
+
+[node name="Main Stats container" type="HBoxContainer" parent="Main Container/The Hive/HBoxContainer" unique_id=120640098]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Time" type="Label" parent="Main Container/The Hive/HBoxContainer/Main Stats container" unique_id=1372380719]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Time: 999:99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/The Hive/HBoxContainer/Main Stats container/Time" unique_id=758879310]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Infection" type="Label" parent="Main Container/The Hive/HBoxContainer/Main Stats container" unique_id=1113396560]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 12
+text = "Infection: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/The Hive/HBoxContainer/Main Stats container/Infection" unique_id=1543406292]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 56.0
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Mysterious Line" type="TextureRect" parent="Main Container/The Hive/HBoxContainer/Main Stats container/Infection" unique_id=730803170]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 0
+offset_left = -120.0
+offset_right = -118.0
+offset_bottom = 56.0
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Points" type="Label" parent="Main Container/The Hive/HBoxContainer/Main Stats container" unique_id=938243120]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Points: 99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/The Hive/HBoxContainer/Main Stats container/Points" unique_id=3842352]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Date" type="Label" parent="Main Container/The Hive/HBoxContainer/Main Stats container" unique_id=1509551548]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "99/99/9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/The Hive/HBoxContainer/Main Stats container/Date" unique_id=850071922]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Rank" type="Label" parent="Main Container/The Hive/HBoxContainer/Main Stats container" unique_id=1099814050]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "RANK S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/The Hive/HBoxContainer/Main Stats container/Rank" unique_id=1323077063]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Hellfire" type="VBoxContainer" parent="Main Container" unique_id=1488856117 node_paths=PackedStringArray("background", "difficulty_label", "time_label", "infection_label", "points_label", "date_label", "rank_label", "click_button")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 1
+script = ExtResource("4_lggy3")
+scenario_id = 3
+background = NodePath("HBoxContainer/Background/Background/Panel")
+enabled_style = SubResource("StyleBoxTexture_h6efa")
+disabled_style = SubResource("StyleBoxTexture_h6efa")
+difficulty_label = NodePath("HBoxContainer/Level_name and Difficulty/Difficulty Container/Difficult")
+time_label = NodePath("HBoxContainer/Main Stats container/Time")
+infection_label = NodePath("HBoxContainer/Main Stats container/Infection")
+points_label = NodePath("HBoxContainer/Main Stats container/Points")
+date_label = NodePath("HBoxContainer/Main Stats container/Date")
+rank_label = NodePath("HBoxContainer/Main Stats container/Rank")
+click_button = NodePath("../../Button5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Container/Hellfire" unique_id=852965087]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Background" type="Panel" parent="Main Container/Hellfire/HBoxContainer" unique_id=644806620]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="Main Container/Hellfire/HBoxContainer/Background" unique_id=676762372]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nn5yo")
+
+[node name="Panel" type="Panel" parent="Main Container/Hellfire/HBoxContainer/Background/Background" unique_id=1811201916]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 55.428024
+offset_right = 719.5394
+offset_bottom = 110.85605
+scale = Vector2(-1, -1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ghsj8")
+
+[node name="Blank space" type="Panel" parent="Main Container/Hellfire/HBoxContainer" unique_id=2112848605]
+custom_minimum_size = Vector2(8.575, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="Level_name and Difficulty" type="VBoxContainer" parent="Main Container/Hellfire/HBoxContainer" unique_id=458467355]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Level Name" type="Label" parent="Main Container/Hellfire/HBoxContainer/Level_name and Difficulty" unique_id=1294861797]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 15
+text = "Hellfire"
+uppercase = true
+
+[node name="Difficulty Container" type="HBoxContainer" parent="Main Container/Hellfire/HBoxContainer/Level_name and Difficulty" unique_id=618862296]
+layout_mode = 2
+
+[node name="Blank space" type="ColorRect" parent="Main Container/Hellfire/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1890402405]
+custom_minimum_size = Vector2(3.46, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Difficult" type="Label" parent="Main Container/Hellfire/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1050859391]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 10
+text = "Very Hard"
+
+[node name="Main Stats container" type="HBoxContainer" parent="Main Container/Hellfire/HBoxContainer" unique_id=1816521093]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Time" type="Label" parent="Main Container/Hellfire/HBoxContainer/Main Stats container" unique_id=93094573]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Time: 999:99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Hellfire/HBoxContainer/Main Stats container/Time" unique_id=1902298346]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Infection" type="Label" parent="Main Container/Hellfire/HBoxContainer/Main Stats container" unique_id=46001035]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 12
+text = "Infection: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Hellfire/HBoxContainer/Main Stats container/Infection" unique_id=1231934813]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Mysterious Line" type="TextureRect" parent="Main Container/Hellfire/HBoxContainer/Main Stats container/Infection" unique_id=299657598]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 0
+offset_left = -120.0
+offset_right = -118.0
+offset_bottom = 56.0
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Points" type="Label" parent="Main Container/Hellfire/HBoxContainer/Main Stats container" unique_id=1376129780]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Points: 99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Hellfire/HBoxContainer/Main Stats container/Points" unique_id=151083624]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Date" type="Label" parent="Main Container/Hellfire/HBoxContainer/Main Stats container" unique_id=1617596385]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "99/99/9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Hellfire/HBoxContainer/Main Stats container/Date" unique_id=532451336]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Rank" type="Label" parent="Main Container/Hellfire/HBoxContainer/Main Stats container" unique_id=82133730]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "RANK S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Hellfire/HBoxContainer/Main Stats container/Rank" unique_id=900461414]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Decisions, Decisions" type="VBoxContainer" parent="Main Container" unique_id=362628021 node_paths=PackedStringArray("background", "difficulty_label", "time_label", "infection_label", "points_label", "date_label", "rank_label", "click_button")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 1
+script = ExtResource("4_lggy3")
+scenario_id = 4
+background = NodePath("HBoxContainer/Background/Background/Panel")
+enabled_style = SubResource("StyleBoxTexture_ljbie")
+disabled_style = SubResource("StyleBoxTexture_ljbie")
+difficulty_label = NodePath("HBoxContainer/Level_name and Difficulty/Difficulty Container/Difficult")
+time_label = NodePath("HBoxContainer/Main Stats container/Time")
+infection_label = NodePath("HBoxContainer/Main Stats container/Infection")
+points_label = NodePath("HBoxContainer/Main Stats container/Points")
+date_label = NodePath("HBoxContainer/Main Stats container/Date")
+rank_label = NodePath("HBoxContainer/Main Stats container/Rank")
+click_button = NodePath("../../Button6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Container/Decisions, Decisions" unique_id=2107485278]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Background" type="Panel" parent="Main Container/Decisions, Decisions/HBoxContainer" unique_id=932382203]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="Main Container/Decisions, Decisions/HBoxContainer/Background" unique_id=1110034727]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wj2cu")
+
+[node name="Panel" type="Panel" parent="Main Container/Decisions, Decisions/HBoxContainer/Background/Background" unique_id=1435253881]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 55.428024
+offset_right = 719.5394
+offset_bottom = 110.85605
+scale = Vector2(-1, -1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ed0a6")
+
+[node name="Blank space" type="Panel" parent="Main Container/Decisions, Decisions/HBoxContainer" unique_id=1157011480]
+custom_minimum_size = Vector2(8.575, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6pct")
+
+[node name="Level_name and Difficulty" type="VBoxContainer" parent="Main Container/Decisions, Decisions/HBoxContainer" unique_id=28621694]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Level Name" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Level_name and Difficulty" unique_id=1275264233]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 15
+text = "Decisions, Decisions"
+uppercase = true
+
+[node name="Difficulty Container" type="HBoxContainer" parent="Main Container/Decisions, Decisions/HBoxContainer/Level_name and Difficulty" unique_id=1241430065]
+layout_mode = 2
+
+[node name="Blank space" type="ColorRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=86825709]
+custom_minimum_size = Vector2(3.46, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Difficult" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Level_name and Difficulty/Difficulty Container" unique_id=1752951644]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 10
+text = "Very Hard"
+
+[node name="Main Stats container" type="HBoxContainer" parent="Main Container/Decisions, Decisions/HBoxContainer" unique_id=1123269737]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Time" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container" unique_id=1880707045]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Time: 999:99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container/Time" unique_id=461689898]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Infection" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container" unique_id=1941678370]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_tabcv")
+theme_override_font_sizes/font_size = 12
+text = "Infection: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mysterious Line" type="TextureRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container/Infection" unique_id=2033371881]
+modulate = Color(0.6627451, 0.8039216, 0.8784314, 1)
+custom_minimum_size = Vector2(1, 20)
+layout_mode = 0
+offset_left = -120.0
+offset_right = -118.0
+offset_bottom = 56.0
+size_flags_vertical = 4
+texture = ExtResource("5_l762r")
+expand_mode = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container/Infection" unique_id=1800549279]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Points" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container" unique_id=1278756276]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "Points: 99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container/Points" unique_id=867735706]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Date" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container" unique_id=1479546361]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "99/99/9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container/Date" unique_id=1391354631]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Rank" type="Label" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container" unique_id=1950541122]
+custom_minimum_size = Vector2(120, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_lggy3")
+theme_override_font_sizes/font_size = 12
+text = "RANK S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="NinePatchRect" parent="Main Container/Decisions, Decisions/HBoxContainer/Main Stats container/Rank" unique_id=1395770408]
+modulate = Color(0.13315523, 0.23067904, 0.27929568, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wj2cu")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Button7" type="Button" parent="." unique_id=1439086196 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 78.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyfli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6efa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpj0q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ljbie")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qloa")
+
+[node name="Button2" type="Button" parent="." unique_id=542551184 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 800.0
+offset_bottom = 134.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyfli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6efa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpj0q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ljbie")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qloa")
+
+[node name="Button3" type="Button" parent="." unique_id=117428750 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_top = 138.0
+offset_right = 800.0
+offset_bottom = 194.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyfli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6efa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpj0q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ljbie")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qloa")
+
+[node name="Button4" type="Button" parent="." unique_id=1000187161 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_top = 198.0
+offset_right = 800.0
+offset_bottom = 254.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyfli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6efa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpj0q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ljbie")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qloa")
+
+[node name="Button5" type="Button" parent="." unique_id=2022034595 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_top = 258.0
+offset_right = 800.0
+offset_bottom = 314.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyfli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6efa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpj0q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ljbie")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qloa")
+
+[node name="Button6" type="Button" parent="." unique_id=1100664830 groups=["Button-Type-2"]]
+layout_mode = 0
+offset_top = 318.0
+offset_right = 800.0
+offset_bottom = 374.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fyfli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6efa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpj0q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ljbie")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qloa")

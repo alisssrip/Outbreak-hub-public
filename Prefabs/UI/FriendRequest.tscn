@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://lt1batrwobtj"]
+
+[ext_resource type="Script" uid="uid://bmqotqdc2yre2" path="res://Scripts/UI/Friend/FriendRequestCard.gd" id="1_oujie"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="2_2xa11"]
+[ext_resource type="Theme" uid="uid://b0g2g6mdgyvb6" path="res://Tres/Main_Theme.tres" id="3_2xa11"]
+[ext_resource type="Texture2D" uid="uid://b33bo8dj0opcg" path="res://Sprites/Default_profile_icon.png" id="3_ccxny"]
+[ext_resource type="Texture2D" uid="uid://3jmm2a7xhwsk" path="res://Sprites/Red button pressed.png" id="4_h1gsa"]
+[ext_resource type="Texture2D" uid="uid://baor67kqmfld" path="res://Sprites/border-shiny.png" id="4_oujie"]
+[ext_resource type="Texture2D" uid="uid://kl6t7iirdpej" path="res://Sprites/Red button pressed2.png" id="5_cgmrk"]
+[ext_resource type="Texture2D" uid="uid://btu08nhuyegp2" path="res://Sprites/MiniFriendStatusPoint.png" id="5_h1gsa"]
+[ext_resource type="Texture2D" uid="uid://cifhsanqqrbp8" path="res://Sprites/Red button.png" id="6_imf83"]
+[ext_resource type="Texture2D" uid="uid://cg0k1doan53ps" path="res://Sprites/Red button disable.png" id="7_1crdu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh8xd"]
+bg_color = Color(1.940271e-07, 0.0053156624, 0.11178885, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldgpb"]
+bg_color = Color(0.4512, 0.58154655, 0.94, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orybc"]
+bg_color = Color(0, 0, 0, 0.4627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t01sr"]
+bg_color = Color(0.08838887, 0.09592611, 0.21665645, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ldgpb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gslk1"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+texture = ExtResource("4_h1gsa")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwh61"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+texture = ExtResource("5_cgmrk")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8htnn"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+texture = ExtResource("6_imf83")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of8g8"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+texture = ExtResource("5_cgmrk")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e15ce"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+texture = ExtResource("7_1crdu")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mn17"]
+texture = ExtResource("6_imf83")
+
+[node name="FriendCard" type="Panel" unique_id=1457934212 node_paths=PackedStringArray("name_label", "icon_rect", "accept_btn", "decline_btn")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(280, 62)
+offset_right = 285.0
+offset_bottom = 71.34565
+scale = Vector2(0.9988379, 0.9951554)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh8xd")
+script = ExtResource("1_oujie")
+name_label = NodePath("Container/Name")
+icon_rect = NodePath("Container/Icon")
+accept_btn = NodePath("Container/Button2")
+decline_btn = NodePath("Container/Button3")
+
+[node name="Container" type="Control" parent="." unique_id=572232757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Container" unique_id=1317178316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.003921569, 0.11372549, 1)
+
+[node name="Button" type="Button" parent="Container" unique_id=453193557]
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 71.34565
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldgpb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_orybc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t01sr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ldgpb")
+
+[node name="Name" type="Label" parent="Container" unique_id=849925940]
+layout_mode = 0
+offset_left = 75.08726
+offset_top = 10.048682
+offset_right = 307.38736
+offset_bottom = 35.64389
+theme_override_colors/font_color = Color(0.61977637, 0.76001364, 0.85182816, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_2xa11")
+theme_override_font_sizes/font_size = 20
+text = "AAAAAAAAAAAAAAA"
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Container" unique_id=502723135 groups=["Button-Type-1"]]
+layout_mode = 0
+offset_left = 79.09191
+offset_top = 40.194733
+offset_right = 168.1955
+offset_bottom = 64.19473
+theme = ExtResource("3_2xa11")
+theme_override_font_sizes/font_size = 12
+text = "COMMON_ACCEPT"
+
+[node name="Button3" type="Button" parent="Container" unique_id=1568149381 groups=["Button-Type-1"]]
+layout_mode = 0
+offset_left = 178.20712
+offset_top = 40.19473
+offset_right = 267.3107
+offset_bottom = 64.19473
+theme = ExtResource("3_2xa11")
+theme_override_colors/font_color = Color(0.88, 0.65999997, 0.6636666, 1)
+theme_override_colors/font_focus_color = Color(0.9, 0.774, 0.7760999, 1)
+theme_override_colors/font_disabled_color = Color(0.65, 0.37049997, 0.37515825, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_gslk1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dwh61")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8htnn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_of8g8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_e15ce")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1mn17")
+text = "COMMON_DECLINE"
+
+[node name="Icon" type="TextureRect" parent="Container" unique_id=1584986528]
+modulate = Color(0.49354547, 0.49354553, 0.49354553, 1)
+texture_filter = 4
+layout_mode = 0
+offset_left = 16.018616
+offset_top = 13.063287
+offset_right = 62.018616
+offset_bottom = 59.063286
+mouse_filter = 2
+texture = ExtResource("3_ccxny")
+expand_mode = 1
+
+[node name="Borde" type="TextureRect" parent="Container/Icon" unique_id=1439415664]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_oujie")
+expand_mode = 1
+
+[node name="StatusCircle" type="TextureRect" parent="Container" unique_id=1182257757]
+visible = false
+modulate = Color(0.016166652, 0.97, 0, 1)
+layout_mode = 0
+offset_left = 61.0
+offset_top = 57.0
+offset_right = 75.0
+offset_bottom = 71.0
+mouse_filter = 2
+texture = ExtResource("5_h1gsa")
+expand_mode = 1

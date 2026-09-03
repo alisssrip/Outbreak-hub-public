@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://vvaf8lq7dxlc"]
+
+[ext_resource type="Shader" uid="uid://ebw1du446r1j" path="res://Shaders/Loading.gdshader" id="1_iofql"]
+
+[resource]
+shader = ExtResource("1_iofql")
+shader_parameter/color_a = Color(1, 0, 0, 1)
+shader_parameter/color_b = Color(0, 0, 1, 1)
+shader_parameter/rotation_deg = 0.0
+shader_parameter/glow_blur = 3.0
+shader_parameter/glow_strength = 1.5
+shader_parameter/glow_flicker_speed = 2.0
+shader_parameter/glow_flicker_amount = 0.2
+shader_parameter/fog_speed = 0.1
+shader_parameter/fog_scale = 1.0
+shader_parameter/fog_color = Color(1, 1, 1, 0.25)

@@ -1,0 +1,25 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/JRE
+/Java-Server
+/PCSX2
+Scripts.zip
+Scripts.tar.gz
+/build/dist
+*.translation
+
+# Editor and assistant local config
+.claude/
+CLAUDE.md
+AGENTS.md
+.mcp.json
+
+# Local endpoint configuration
+endpoints.cfg
+
+# Release tooling
+/build
+
+# Build artifacts
+*.pck

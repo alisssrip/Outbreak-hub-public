@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://j2nih1ft15hd"]
+
+[ext_resource type="Script" uid="uid://cjxlho7303erp" path="res://Scripts/UI/UserChatMessageSystem.gd" id="1_uhvso"]
+[ext_resource type="FontFile" uid="uid://slvor8egq1tq" path="res://Fuentes/ShareTechMono-Regular.ttf" id="2_5pa2l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pnaym"]
+
+[node name="Chat" type="HBoxContainer" unique_id=514370697 node_paths=PackedStringArray("name_field", "date_field", "msg_field")]
+rotation = 0.001668895
+alignment = 1
+script = ExtResource("1_uhvso")
+name_field = NodePath("Text/HBoxContainer/Label")
+date_field = NodePath("Text/HBoxContainer/Date")
+msg_field = NodePath("Text/HBoxContainer2/Message")
+
+[node name="Text" type="VBoxContainer" parent="." unique_id=252960777 node_paths=PackedStringArray("name_field", "date_field", "msg_field")]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+script = ExtResource("1_uhvso")
+name_field = NodePath("HBoxContainer/Label")
+date_field = NodePath("HBoxContainer/Date")
+msg_field = NodePath("HBoxContainer2/Message")
+
+[node name="ColorRect" type="ColorRect" parent="Text" unique_id=1452802072]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Text" unique_id=245328100]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Text/HBoxContainer" unique_id=2039074093]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.8039216, 0.8784314, 1)
+theme_override_fonts/font = ExtResource("2_5pa2l")
+theme_override_font_sizes/font_size = 14
+text = "User"
+vertical_alignment = 1
+
+[node name="Date" type="Label" parent="Text/HBoxContainer" unique_id=987474238]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.26904544, 0.35362998, 0.40844524, 1)
+theme_override_fonts/font = ExtResource("2_5pa2l")
+theme_override_font_sizes/font_size = 11
+text = "99:99 99/99/99999"
+vertical_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Text" unique_id=277734609]
+custom_minimum_size = Vector2(850, 17)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="ColorRect" parent="Text/HBoxContainer2" unique_id=1557993411]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Message" type="RichTextLabel" parent="Text/HBoxContainer2" unique_id=1858599847]
+custom_minimum_size = Vector2(845, 17)
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pnaym")
+text = "Sample chat message
+"
+fit_content = true
+selection_enabled = true

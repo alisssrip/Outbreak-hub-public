@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://fb1hna04mu8r"]
+
+[ext_resource type="Texture2D" uid="uid://bxpv174c8j3s0" path="res://Sprites/button pressed.png" id="1_wafwk"]
+
+[resource]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_wafwk")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
